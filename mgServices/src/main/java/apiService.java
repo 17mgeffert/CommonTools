@@ -10,7 +10,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class apiService {
 
-    private static void get(String urlString) throws IOException {
+    public static void get(String urlString) throws IOException {
         URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
@@ -26,11 +26,9 @@ public class apiService {
         System.out.println("Response Code:"+responseCode);
         System.out.println(output);
     }
-    private static void post() throws IOException {
+    public static void post() throws IOException {
         URL url = new URL("https://reqres.in/api/login");
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-        //String stringToReverse = URLEncoder.encode(args[1], "UTF-8");
-
         connection.setDoOutput(true);
         connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36");
         connection.setRequestProperty("Content-Type", "application/json");

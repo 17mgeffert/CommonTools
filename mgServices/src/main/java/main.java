@@ -8,7 +8,8 @@ public class main{
 
     public static void main(String[] args) throws IOException {
         System.out.println("Hello World!");
-        get("https://pokeapi.co/api/v2/pokemon/ditto/");
+        apiService service = new apiService();
+        service.get("https://pokeapi.co/api/v2/pokemon/ditto/");
     }
 
 
