@@ -1,13 +1,16 @@
-package service;
+/**
+ * Michael Geffert
+ * This is a basic service that allows for GET and POST
+ * calls to be executed
+ */
 
+package service;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-
 import model.User;
 import model.UserReturn;
 import org.codehaus.jackson.map.ObjectMapper;
