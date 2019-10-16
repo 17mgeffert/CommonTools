@@ -1,3 +1,5 @@
+package service;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,15 +8,17 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
+import model.User;
+import model.UserReturn;
 import org.codehaus.jackson.map.ObjectMapper;
 
-public class apiService {
+public class ApiService {
 
     public static void get(String urlString) throws IOException {
         URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
-        connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36");
+        connection.setRequestProperty("model.User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36");
         int responseCode = connection.getResponseCode();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(connection.getInputStream()));
@@ -30,7 +34,7 @@ public class apiService {
         URL url = new URL("https://reqres.in/api/login");
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
         connection.setDoOutput(true);
-        connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36");
+        connection.setRequestProperty("model.User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36");
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestMethod("POST");
 
@@ -58,7 +62,7 @@ public class apiService {
         }
         in.close();
         System.out.println(output);
-        UserReturn newUser=mapper.readValue(output,UserReturn.class);
+        UserReturn newUser=mapper.readValue(output, UserReturn.class);
         System.out.println(newUser.toString());
     }
 }

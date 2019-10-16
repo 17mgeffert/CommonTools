@@ -1,3 +1,5 @@
+package model;
+
 public class UserReturn {
     private String token;
 
@@ -11,7 +13,7 @@ public class UserReturn {
 
     @Override
     public String toString() {
-        return "UserReturn{" +
+        return "model.UserReturn{" +
                 "token='" + token + '\'' +
                 '}';
     }
